@@ -10,7 +10,7 @@ class AutoAlbum:
                  connection: psycopg2.extensions.connection,
                  album_name: str,
                  shared: bool=False,
-                 sharables: None | list[str]=None,
+                 sharables: list=None,
                  commit=False,
                  ):
         """
@@ -163,8 +163,8 @@ class AutoAlbum:
                      start: str,
                      stop: str,
                      limit=15,
-                     people: None | list[str]=None,
-                     in_album: None | int=None,
+                     people: list=None,
+                     in_album: int=None,
                      commit: bool=False):
         """
         Updates an album with new photos

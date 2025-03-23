@@ -1,13 +1,9 @@
 set -e
 
-people="people"
-souvenirs="souvenirs"
-tagp=$people:latest
-tags=$souvenirs:latest
+target="souvenirs"
+tag=$target:latest
 
-echo "Building $people and $souvenirs with tags $tag"
+echo "Building $target with tags $tag"
 
-docker build --pull --tag $tagp --target $people .
-docker push $tagp
-docker build --pull --tag $tags --target $souvenirs .
-docker push $tags
+docker build --pull --tag $tagp --target $target .
+docker push $tag

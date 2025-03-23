@@ -69,3 +69,14 @@ Use the schedule tab to define the schedule (e.g. every day at 10am). In the `Ta
 
 python /path/to/scripts/souvenirs.py 
 ```
+
+## Containerization
+
+For generality and also to ennable use of more recent python versions, I recommend using a docker container to run the 
+code. To do so, run the following command to build the relevant docker images:
+
+```
+docker build -t syno_memories .
+```
+
+You should the be able to use `souveinrs.sh` in `scripts/` to start the container.

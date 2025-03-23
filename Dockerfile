@@ -7,5 +7,5 @@ COPY . /photo-syn
 FROM base AS souvenirs
 CMD python3 script/deploy_souvenirs.py
 
-FROM base AS photos
+FROM base AS people
 CMD /scripts/deploy_people_albums.py

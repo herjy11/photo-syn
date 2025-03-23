@@ -1,6 +1,6 @@
 set -e
 
-target="souvenirs"
+target=$1
 tag=$target:latest
 
 echo "Building $target with tags $tag"

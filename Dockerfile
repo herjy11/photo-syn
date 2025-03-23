@@ -5,7 +5,7 @@ WORKDIR /photo-syn
 COPY . /photo-syn
 
 FROM base AS souvenirs
-CMD python3 script/deploy_souvenirs.py
+CMD python3 /photo-syn/script/deploy_souvenirs.py
 
 FROM base AS people
-CMD /scripts/deploy_people_albums.py
+CMD python3 /photo-syn/scripts/deploy_people_albums.py

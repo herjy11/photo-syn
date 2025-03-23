@@ -6,8 +6,8 @@ then
   exit 1
 fi
 
-systemctl stop $name || true
-systemctl disable $name || true
+sudo systemctl stop $name || true
+sudo systemctl disable $name || true
 
-docker stop $name || true
-docker rm -f $name || true
+sudo docker stop $name || true
+sudo docker rm -f $name || true

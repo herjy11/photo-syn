@@ -6,6 +6,6 @@ run_name=syno.$name
 
 bash scripts/stop_container.sh $name
 echo "Start container $run_name"
-docker run -d -m --name=$run_name $name
+docker run -d --name=$run_name $name
 
 echo "Done"

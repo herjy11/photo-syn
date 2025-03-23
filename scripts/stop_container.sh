@@ -1,6 +1,6 @@
 name=$1
 
-if [[ -z $name]];
+if [[ -z $name ]];
 then
   echo "Please provide a container name"
   exit 1

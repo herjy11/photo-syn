@@ -1,7 +1,7 @@
 set -e
 
 name=$1
-
+echo "Build $name"
 run_name=syno.$name
 
 bash scripts/stop_container.sh $run_name

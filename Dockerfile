@@ -11,3 +11,6 @@ ENTRYPOINT ["python3", "/photo-syn/scripts/deploy_souvenirs.py"]
 
 FROM base AS people
 ENTRYPOINT ["python3", "/photo-syn/scripts/deploy_people_albums.py"]
+
+FROM base AS hourly
+ENTRYPOINT ["python3", "/photo-syn/scripts/deploy_hourly_albums.py"]

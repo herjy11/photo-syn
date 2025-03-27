@@ -72,7 +72,7 @@ python /path/to/scripts/souvenirs.py
 
 ## Containerization
 
-For generality and also to ennable use of more recent python versions, I recommend using a docker container to run the 
+For generality and also to enable use of more recent python versions, I recommend using a docker container to run the 
 code. To do so, run the following command to build the relevant docker images:
 
 ```

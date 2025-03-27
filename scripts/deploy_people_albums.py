@@ -16,7 +16,6 @@ if __name__ == '__main__':
     people = get_people(connection)
     for user in users:
 
-        connection = get_connection()
         try:
             person = people[[p.lower() == user.lower() for p in people]][0]
             album = AutoAlbum(user,

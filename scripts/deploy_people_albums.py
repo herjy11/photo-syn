@@ -1,5 +1,6 @@
 import datetime as dt
 import warnings
+import sys
 warnings.filterwarnings('ignore')
 
 import numpy as np
@@ -10,7 +11,7 @@ from memories.connection import get_connection
 
 if __name__ == '__main__':
 
-    connection = get_connection()
+    connection = get_connection(ip=sys.argv[1], port=sys.argv[2])
     users = get_users(connection)
     people = get_people(connection)
     for user in users:

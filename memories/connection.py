@@ -1,11 +1,11 @@
 import psycopg2
 
-def get_connection(ip="192.168.0.69"):
+def get_connection(ip, port):
     connection = psycopg2.connect(
         host=ip,
         database="synofoto",
         user="postgres",
-        port=5432,
+        port=port,
     )
 
     if connection:

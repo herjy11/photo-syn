@@ -69,14 +69,35 @@ Use the schedule tab to define the schedule (e.g. every day at 10am). In the `Ta
 
 python /path/to/scripts/souvenirs.py 
 ```
+Note that this solution uses the native python environment of your synology, which only supports python 3.8.15
+(at least for my model). At the moment, only release [v1](https://github.com/herjy11/photo-syn/releases/tag/v1-DS224%2B)
+supports python 3.8.15.
+
+To use other versions of python, I suggest running a container by following the instructions below.
 
 ## Containerization
 
 For generality and also to enable use of more recent python versions, I recommend using a docker container to run the 
-code. To do so, run the following command to build the relevant docker images:
+code. To do so, I've made helper script that you can use to build and run the containers.
+
+My currennt solution is probably not ideal, but it works: I create a docker image for each album-generating script 
+I want to run. They can be found in the Dockerfile and each image simply runs the corresponding python script. 
+From there, building the images is done by running:
 
 ```
-docker build -t syno_memories .
+bash scripts/build_images.sh souvenirs
+bash scripts/build_images.sh people
+bash scripts/build_images.sh hourly
 ```
+from within the repository.
 
-You should the be able to use `souveinrs.sh` in `scripts/` to start the container.
+Then running the containers via tasks uses the `run_container` script:
+
+```
+#!/bin/sh
+
+/var/services/homes/remy/git_repos/photo-syn/scripts/run_container.sh people <ip> <port>
+
+/var/services/homes/remy/git_repos/photo-syn/scripts/run_container.sh souvenirs <ip> <port>
+```
+where <ip> and <port> are the ip and port of the postgres database on your synology.

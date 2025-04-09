@@ -11,7 +11,7 @@ from memories.connection import get_connection
 if __name__ == '__main__':
     connection = get_connection(ip=sys.argv[1], port=sys.argv[2])
     try:
-        album = AutoAlbum('remy',
+        album = AutoAlbum(sys.argv[3],
                           connection,
                           album_name="Souvenirs",
                           shared=True,

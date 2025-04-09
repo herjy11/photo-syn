@@ -96,8 +96,8 @@ Then running the containers via tasks uses the `run_container` script:
 ```
 #!/bin/sh
 
-/var/services/homes/remy/git_repos/photo-syn/scripts/run_container.sh people <ip> <port>
+/var/services/homes/remy/git_repos/photo-syn/scripts/run_container.sh people <ip> <port> <user>
 
-/var/services/homes/remy/git_repos/photo-syn/scripts/run_container.sh souvenirs <ip> <port>
+/var/services/homes/remy/git_repos/photo-syn/scripts/run_container.sh souvenirs <ip> <port> <user>
 ```
-where <ip> and <port> are the ip and port of the postgres database on your synology.
+where <ip> and <port> are the ip and port of the postgres database on your NAS and <user> is your synology username.

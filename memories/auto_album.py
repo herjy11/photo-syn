@@ -4,6 +4,8 @@ import datetime as dt
 import numpy as np
 import pandas.io.sql as sqlio
 
+from memories.utils import get_users
+
 class AutoAlbum:
     def __init__(self,
                  user:str,
@@ -37,14 +39,7 @@ class AutoAlbum:
         if shared:
             self.sharables = sharables
             if sharables is None:
-               self.sharables = ['remy',
-                                 'aline',
-                                 'mamie',
-                                 'papi',
-                                 'lucas',
-                                 'ong ngoai',
-                                 'ba ngoai',
-                                 'alexandre']
+               self.sharables = get_users(connection)
         # Postgres connection with psycopg2
         self.connection = connection
         self.cursor = connection.cursor()
